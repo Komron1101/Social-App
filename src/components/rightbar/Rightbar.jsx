@@ -1,6 +1,6 @@
 import "./rightbar.css";
-// import { Users } from "../../dummyData";
-// import Online from "../online/Online";
+import { Users } from "../../dummyData";
+import Online from "../online/Online";
 
 export default function Rightbar({/*{ profile }*/ }) {
   // const HomeRightbar = () => {
@@ -98,8 +98,6 @@ export default function Rightbar({/*{ profile }*/ }) {
   return (
     <div className="rightbar">
       <div className="rightbarWrapper">
-
-        {/* TODO: TEMP */}
         <div className="rightWrapper">
           <div className="birthdayContainer">
             <img src="assets/gift.png" alt="gift" className="birthdayImg" />
@@ -110,131 +108,11 @@ export default function Rightbar({/*{ profile }*/ }) {
           <img src="assets/ad.png" alt="ad" className="rightbarAd" />
           <h4 className="rightbarTitle">Online Friends</h4>
           <ul className="rightbarFriendList">
-            <li className="rightbarFriend">
-              <div className="rightbarProfileImgContainer">
-                <img
-                  src="assets/person/3.jpeg"
-                  alt="photo"
-                  className="rightbarProfileImg" 
-                />
-                <span className="rightbarOnline"></span>
-              </div>
-              <span className="rightbarUsername">John Carter</span>
-            </li>
-            <li className="rightbarFriend">
-              <div className="rightbarProfileImgContainer">
-                <img
-                  src="assets/person/3.jpeg"
-                  alt="photo"
-                  className="rightbarProfileImg" 
-                />
-                <span className="rightbarOnline"></span>
-              </div>
-              <span className="rightbarUsername">John Carter</span>
-            </li>
-            <li className="rightbarFriend">
-              <div className="rightbarProfileImgContainer">
-                <img
-                  src="assets/person/3.jpeg"
-                  alt="photo"
-                  className="rightbarProfileImg" 
-                />
-                <span className="rightbarOnline"></span>
-              </div>
-              <span className="rightbarUsername">John Carter</span>
-            </li>
-            <li className="rightbarFriend">
-              <div className="rightbarProfileImgContainer">
-                <img
-                  src="assets/person/3.jpeg"
-                  alt="photo"
-                  className="rightbarProfileImg" 
-                />
-                <span className="rightbarOnline"></span>
-              </div>
-              <span className="rightbarUsername">John Carter</span>
-            </li>
-            <li className="rightbarFriend">
-              <div className="rightbarProfileImgContainer">
-                <img
-                  src="assets/person/3.jpeg"
-                  alt="photo"
-                  className="rightbarProfileImg" 
-                />
-                <span className="rightbarOnline"></span>
-              </div>
-              <span className="rightbarUsername">John Carter</span>
-            </li>
-            <li className="rightbarFriend">
-              <div className="rightbarProfileImgContainer">
-                <img
-                  src="assets/person/3.jpeg"
-                  alt="photo"
-                  className="rightbarProfileImg" 
-                />
-                <span className="rightbarOnline"></span>
-              </div>
-              <span className="rightbarUsername">John Carter</span>
-            </li>
-            <li className="rightbarFriend">
-              <div className="rightbarProfileImgContainer">
-                <img
-                  src="assets/person/3.jpeg"
-                  alt="photo"
-                  className="rightbarProfileImg" 
-                />
-                <span className="rightbarOnline"></span>
-              </div>
-              <span className="rightbarUsername">John Carter</span>
-            </li>
-            <li className="rightbarFriend">
-              <div className="rightbarProfileImgContainer">
-                <img
-                  src="assets/person/3.jpeg"
-                  alt="photo"
-                  className="rightbarProfileImg" 
-                />
-                <span className="rightbarOnline"></span>
-              </div>
-              <span className="rightbarUsername">John Carter</span>
-            </li>
-            <li className="rightbarFriend">
-              <div className="rightbarProfileImgContainer">
-                <img
-                  src="assets/person/3.jpeg"
-                  alt="photo"
-                  className="rightbarProfileImg" 
-                />
-                <span className="rightbarOnline"></span>
-              </div>
-              <span className="rightbarUsername">John Carter</span>
-            </li>
-            <li className="rightbarFriend">
-              <div className="rightbarProfileImgContainer">
-                <img
-                  src="assets/person/3.jpeg"
-                  alt="photo"
-                  className="rightbarProfileImg" 
-                />
-                <span className="rightbarOnline"></span>
-              </div>
-              <span className="rightbarUsername">John Carter</span>
-            </li>
-            <li className="rightbarFriend">
-              <div className="rightbarProfileImgContainer">
-                <img
-                  src="assets/person/3.jpeg"
-                  alt="photo"
-                  className="rightbarProfileImg" 
-                />
-                <span className="rightbarOnline"></span>
-              </div>
-              <span className="rightbarUsername">John Carter</span>
-            </li>
+            {Users.map((u) => (
+              <Online key={u.id} user={u} />
+            ))}
           </ul>
         </div>
-
-
 
         {/* {profile ? <ProfileRightbar /> : <HomeRightbar />} */}
       </div>
