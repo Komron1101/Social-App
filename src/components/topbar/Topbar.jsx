@@ -7,6 +7,7 @@ export default function Topbar() {
 
       <div className="topbarLeft">
         <span className="logo">Commasocial</span>
+        <span className="logoSmile">^_^</span>
       </div>
 
       <div className="topbarCenter">
@@ -37,7 +38,7 @@ export default function Topbar() {
             <Notifications />
             <span className="topbarIconBadge">1</span>
           </div>
-          <img src="/assets/person/1.jpeg" alt="photo" className="topbarImg"/>
+          <img src="/assets/myPhoto/avatar.jpeg" alt="photo" className="topbarImg"/>
         </div>
       </div>
 
