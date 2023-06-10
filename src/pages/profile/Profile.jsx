@@ -3,6 +3,8 @@ import Topbar from "../../components/topbar/Topbar";
 import Sidebar from "../../components/sidebar/Sidebar";
 import Feed from "../../components/feed/Feed";
 import Rightbar from "../../components/rightbar/Rightbar";
+import { Users } from "../../dummyData";
+
 
 export default function Profile() {
   return (
@@ -15,18 +17,20 @@ export default function Profile() {
             <div className="profileCover">
               <img
                 className="profileCoverImg"
-                src="assets/myPhoto/backgroundProfile.jpeg"
+                src={Users.filter((u) => u.id === 11)[0].backgroundProfile}
                 alt="profilePhoto"
               />
               <img
                 className="profileUserImg"
-                src="assets/myPhoto/avatar.jpeg"
+                src={Users.filter((u) => u.id === 11)[0].profilePicture}
                 alt="profilePhoto"
               />
             </div>
             <div className="profileInfo">
-              <h4 className="profileInfoName">Komron</h4>
-              <span className="profileInfoDesc">Hello developers!</span>
+              <h4 className="profileInfoName">
+                {Users.filter((u) => u.id === 11)[0].username}
+              </h4>
+              <span className="profileInfoDesc">{Users.filter((u) => u.id === 11)[0].userDesc}</span>
             </div>
           </div>
           <div className="profileRightBottom">

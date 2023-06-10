@@ -1,14 +1,40 @@
+import { useState } from "react";
 import "./share.css";
 import { PermMedia, Label, Room, EmojiEmotions } from "@material-ui/icons"
+import { Users } from "../../dummyData";
 
-export default function Share() {
+export default function Share(props) {
+  const [input, setInput] = useState('');
+
+  const shareFeed = () => {
+    const newFeed = {
+      id: Math.random(),
+      desc: input,
+      userId: 11,
+      like: 0,
+    }
+
+    // add the todo to the list
+    props.setListPosts([newFeed, ...props.listPosts]);
+
+    // clear input box
+    setInput("");
+  }
+
   return (
     <div className="share">
 
       <div className="shareWrapper">
         <div className="shareTop">
-          <img className="shareProfileImg" src="/assets/myPhoto/avatar.jpeg" alt="photo" />
+          <img
+            className="shareProfileImg"
+            src={Users.filter((u) => u.id === 11)[0].profilePicture}
+            alt="photo"
+          />
           <input
+            type='text'
+            value={input}
+            onChange={(e) => setInput(e.target.value)}
             placeholder="What's in your mind... ?"
             className="shareInput"
           />
@@ -36,7 +62,7 @@ export default function Share() {
             </div>
           </div>
 
-          <button className="shareButton">Share</button>
+          <button onClick={shareFeed} className="shareButton">Share</button>
         </div>
       </div>
 

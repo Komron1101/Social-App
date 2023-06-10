@@ -49,6 +49,15 @@ export const Users = [
     profilePicture: "assets/person/10.jpeg",
     username: "Safak Kocaoglu",
   },
+  
+  // current user
+  {
+    id: 11,
+    profilePicture: "assets/myPhoto/avatar.jpeg",
+    username: "Komron",
+    backgroundProfile: "assets/myPhoto/backgroundProfile.jpeg",
+    userDesc: "Hello developers!",
+  }, 
 ];
 
 export const Posts = [
