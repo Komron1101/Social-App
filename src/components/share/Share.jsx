@@ -6,16 +6,16 @@ import { Users } from "../../dummyData";
 export default function Share(props) {
   const [input, setInput] = useState('');
 
-  const shareFeed = () => {
-    const newFeed = {
+  const shareFeed = (e) => {
+    e.preventDefault();
+
+    // New Post
+    props.onSubmit({
       id: Math.random(),
       desc: input,
       userId: 11,
       like: 0,
-    }
-
-    // add the todo to the list
-    props.setListPosts([newFeed, ...props.listPosts]);
+    })
 
     // clear input box
     setInput("");

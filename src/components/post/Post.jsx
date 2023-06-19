@@ -4,7 +4,7 @@ import { Users } from "../../dummyData";
 import { useState } from "react";
 
 
-export default function Post({ post, listPosts, setListPosts }) {
+export default function Post({ post, removePost }) {
 
   /*
   console.log(post); FIXME: почему два раза вызывается каждый объект?
@@ -18,12 +18,6 @@ export default function Post({ post, listPosts, setListPosts }) {
   const likeHandler = () => {
     setLike(isLiked ? like - 1 : like + 1);
     setIsLiked(!isLiked);
-  }
-
-  const closePost = (id) => {
-    // Filter out todo with the id
-    const newListPosts = listPosts.filter((p) => p.id !== id);
-    setListPosts(newListPosts);
   }
 
   return (
@@ -43,7 +37,7 @@ export default function Post({ post, listPosts, setListPosts }) {
           </div>
 
           <div className="postTopRight">
-            <Close onClick={() => closePost(post.id)} />
+            <Close onClick={() => removePost(post.id)} />
             {/* <MoreVert /> */}
           </div>
         </div>
