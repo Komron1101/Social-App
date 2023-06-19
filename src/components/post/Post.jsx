@@ -1,17 +1,10 @@
 import "./post.css";
-import { MoreVert, Close } from "@material-ui/icons";
+import { MoreVert, DeleteOutlined, EditOutlined } from "@material-ui/icons";
 import { Users } from "../../dummyData";
 import { useState } from "react";
 
 
 export default function Post({ post, removePost }) {
-
-  /*
-  console.log(post); FIXME: почему два раза вызывается каждый объект?
-  console.log(user[0].username) FIXME: почeму в двое больше вызывается значение из объекта?!!! и почему [0]?
-  console.log(post?.desc); FIXME: зачем здесь знак вопроса?
-  */
-
   const [like, setLike] = useState(post.like)
   const [isLiked, setIsLiked] = useState(false)
 
@@ -37,8 +30,9 @@ export default function Post({ post, removePost }) {
           </div>
 
           <div className="postTopRight">
-            <Close onClick={() => removePost(post.id)} />
             {/* <MoreVert /> */}
+            <EditOutlined className="topRightIcon"/>
+            <DeleteOutlined onClick={() => removePost(post.id)} className="topRightIcon" />
           </div>
         </div>
 
